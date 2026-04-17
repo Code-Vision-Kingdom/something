@@ -17,6 +17,7 @@ body{
     background-color: black;
     color: white;
     overflow-x: hidden;
+    background: radial-gradient(circle at top right, rgba(183,75,75,0.15), transparent 40%), radial-gradient(circle at bottom left, rgba(183,75,75,0.1), transparent 40%), #000; color: white; overflow-x: hidden;
 }
 
 /* =========================
@@ -84,12 +85,15 @@ section{
 .home-content h3{
     font-size: 4rem;
     margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 .home-content p{
     margin-top: 2rem;
     font-size: 1.8rem;
     line-height: 1.6;
+    max-width: 550px;
+    font-size: 2rem;
 }
 
 span{
@@ -106,7 +110,7 @@ span{
 
 .home-img-php img{
     width: 100%;
-    max-width: 400px;
+    max-width: 700px;
     height: auto;
     border-radius: 2rem;
     display: flex;
@@ -162,22 +166,65 @@ span{
    TYPING ANIMATION
 ========================= */
 
-.typing-text{
+/* BASE TEXT STYLES */
+.typing-text,
+.typing-text-javascript,
+.typing-text-php,
+.typing-text-java,
+.typing-text-linux{
     font-size: 3.4rem;
     font-weight: 600;
 }
 
-.typing-text span{
+.typing-text span,
+.typing-text-javascript span,
+.typing-text-php span,
+.typing-text-java span,
+.typing-text-linux span{
     position: relative;
 }
 
+/* MAIN WORDS */
 .typing-text span::before{
-    content: "Web Developer";
+    content: "";
     color: #b74b4b;
     animation: words 12s infinite;
 }
 
-.typing-text span::after{
+/* JAVASCRIPT */
+.typing-text-javascript span::before{
+    content: "";
+    color: #b74b4b;
+    animation: wordsJavaScript 12s infinite;
+}
+
+/* PHP */
+.typing-text-php span::before{
+    content: "";
+    color: #b74b4b;
+    animation: wordsPhp 12s infinite;
+}
+
+/* JAVA */
+.typing-text-java span::before{
+    content: "";
+    color: #b74b4b;
+    animation: wordsJava 12s infinite;
+}
+
+/* LINUX */
+.typing-text-linux span::before{
+    content: "";
+    color: #b74b4b;
+    animation: wordsLinux 12s infinite;
+}
+
+/* CURSOR (BLINKING) */
+.typing-text span::after,
+.typing-text-javascript span::after,
+.typing-text-php span::after,
+.typing-text-java span::after,
+.typing-text-linux span::after{
     content: "";
     position: absolute;
     right: -8px;
@@ -188,6 +235,10 @@ span{
     animation: cursor 0.7s infinite;
 }
 
+/* =========================
+   KEYFRAMES
+========================= */
+
 /* CURSOR */
 @keyframes cursor{
     0%{ opacity: 1; }
@@ -195,7 +246,7 @@ span{
     100%{ opacity: 1; }
 }
 
-/* WORD SWITCH */
+/* MAIN WORD SWITCH */
 @keyframes words{
     0%, 20%{ content: "Web Developer"; }
     21%, 40%{ content: "Software Developer"; }
@@ -203,6 +254,35 @@ span{
     61%, 80%{ content: "Script Writer"; }
     81%, 100%{ content: "Programmer"; }
 }
+
+/* JAVASCRIPT */
+@keyframes wordsJavaScript{
+    0%, 33%{ content: "Classes"; }
+    34%, 66%{ content: "Selectors"; }
+    67%, 100%{ content: "Designs"; }
+}
+
+/* PHP */
+@keyframes wordsPhp{
+    0%, 33%{ content: "HTML"; }
+    34%, 66%{ content: "CSS"; }
+    67%, 100%{ content: "SQL"; }
+}
+
+/* JAVA */
+@keyframes wordsJava{
+    0%, 33%{ content: "Classes"; }
+    34%, 66%{ content: "Selectors"; }
+    67%, 100%{ content: "Designs"; }
+}
+
+/* LINUX */
+@keyframes wordsLinux{
+    0%, 33%{ content: "Scripting"; }
+    34%, 66%{ content: "SSH"; }
+    67%, 100%{ content: "SFTP"; }
+}
+
 
 /* =========================
    TABLET
@@ -304,3 +384,4 @@ span{
         margin-top: 10rem;
     }
 }
+
